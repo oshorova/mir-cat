@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мир кошек</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #fffaf5;
+      color: #382d2a;
+      line-height: 1.6;
+    }
+    header {
+      background: #fff;
+      padding: 18px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 3px 18px #6b463015;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo { font-size: 25px; font-weight: 800; color: #bd7655; }
+    nav a {
+      color: #59443c; text-decoration: none; margin-left: 24px;
+      font-weight: 600; transition: color .2s;
+    }
+    nav a:hover { color: #d88963; }
+    .hero {
+      min-height: 480px;
+      padding: 75px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+      background: linear-gradient(120deg, #f9e7d9, #fff4e9);
+    }
+    .hero-text { max-width: 540px; }
+    .eyebrow { color: #b76f4e; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+    h1 { font-size: clamp(38px, 5vw, 62px); line-height: 1.08; margin: 14px 0 20px; }
+    .hero p { font-size: 18px; color: #6c5750; margin-bottom: 28px; }
+    .button {
+      display: inline-block; border: 0; border-radius: 30px;
+      background: #bd7655; color: white; padding: 13px 25px;
+      font-size: 16px; font-weight: 700; text-decoration: none; cursor: pointer;
+      transition: transform .2s, background .2s;
+    }
+    .button:hover { background: #a95f42; transform: translateY(-2px); }
+    .hero img {
+      width: min(42%, 440px); aspect-ratio: 1 / 1; object-fit: cover;
+      border-radius: 48% 48% 18px 18px; box-shadow: 18px 18px 0 #e6b99f;
+    }
+    section { padding: 75px 8%; }
+    .section-title { text-align: center; font-size: 35px; margin-bottom: 12px; }
+    .section-subtitle { text-align: center; color: #806b63; margin-bottom: 38px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .card {
+      background: white; border-radius: 18px; overflow: hidden;
+      box-shadow: 0 8px 25px #68452a12; transition: transform .25s;
+    }
+    .card:hover { transform: translateY(-7px); }
+    .card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .card-content { padding: 22px; }
+    .card h3 { color: #a96245; font-size: 21px; margin-bottom: 8px; }
+    .card p { color: #705e56; }
+    .facts { background: #f4e4d8; }
+    .fact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center; }
+    .fact { background: #fffaf5; border-radius: 16px; padding: 28px 18px; }
+    .fact strong { display: block; color: #bd7655; font-size: 34px; margin-bottom: 7px; }
+    .care {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
+    }
+    .care img { width: 100%; max-height: 370px; object-fit: cover; border-radius: 20px; }
+    .care h2 { font-size: 34px; margin-bottom: 15px; }
+    .care ul { padding-left: 22px; color: #705e56; }
+    .care li { margin: 10px 0; }
+    .quiz { background: #fff; text-align: center; }
+    .quiz-box {
+      max-width: 620px; margin: 25px auto 0; padding: 30px;
+      background: #fff6ef; border-radius: 18px;
+    }
+    #answer { min-height: 28px; margin-top: 18px; color: #a96245; font-weight: 700; }
+    footer { text-align: center; background: #493831; color: #fff2e9; padding: 25px; }
+    @media (max-width: 800px) {
+      header { flex-direction: column; gap: 12px; }
+      nav a { margin: 0 8px; font-size: 14px; }
+      .hero { flex-direction: column; text-align: center; }
+      .hero img { width: min(85%, 390px); }
+      .cards, .fact-grid, .care { grid-template-columns: 1fr; }
+      section { padding: 55px 7%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🐾 Мир кошек</div>
+    <nav>
+      <a href="#about">О кошках</a>
+      <a href="#breeds">Породы</a>
+      <a href="#care">Уход</a>
+      <a href="#quiz">Викторина</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero" id="about">
+      <div class="hero-text">
+        <div class="eyebrow">Маленькие друзья с большим характером</div>
+        <h1>Добро пожаловать в мир кошек!</h1>
+        <p>Кошки — удивительные домашние животные. Они независимы, любознательны, игривы и умеют дарить человеку тепло и уют.</p>
+        <a class="button" href="#breeds">Познакомиться с кошками</a>
+      </div>
+      <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=900&q=85" alt="Рыжая кошка">
+    </div>
+
+    <section id="breeds">
+      <h2 class="section-title">Популярные породы</h2>
+      <p class="section-subtitle">У каждой кошки — своя внешность и свой характер</p>
+      <div class="cards">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=800&q=85" alt="Британская короткошёрстная кошка">
+          <div class="card-content">
+            <h3>Британская короткошёрстная</h3>
+            <p>Спокойная и уравновешенная кошка с густой плюшевой шерстью и выразительными глазами.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=800&q=85" alt="Сиамская кошка">
+          <div class="card-content">
+            <h3>Сиамская</h3>
+            <p>Общительная, активная и любопытная. Часто любит внимание и общение с человеком.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=800&q=85" alt="Мейн-кун">
+          <div class="card-content">
+            <h3>Мейн-кун</h3>
+            <p>Крупная пушистая кошка с кисточками на ушах. Обычно отличается дружелюбным нравом.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="facts">
+      <h2 class="section-title">Интересные факты</h2>
+      <p class="section-subtitle">Несколько удивительных особенностей кошек</p>
+      <div class="fact-grid">
+        <div class="fact"><strong>1</strong>У кошек очень гибкое тело и подвижный позвоночник.</div>
+        <div class="fact"><strong>2</strong>Кошки общаются не только мяуканьем, но и движениями хвоста и ушей.</div>
+        <div class="fact"><strong>3</strong>Усы помогают кошке ориентироваться и ощущать пространство вокруг.</div>
+      </div>
+    </section>
+
+    <section class="care" id="care">
+      <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=900&q=85" alt="Кошка отдыхает">
+      <div>
+        <h2>Как заботиться о кошке?</h2>
+        <p>Чтобы питомец был здоровым и чувствовал себя комфортно, ему необходимы:</p>
+        <ul>
+          <li>свежая вода и подходящее питание;</li>
+          <li>чистый лоток и уютное место для отдыха;</li>
+          <li>игрушки и ежедневное внимание;</li>
+          <li>регулярные осмотры у ветеринарного врача;</li>
+          <li>бережное отношение и безопасность дома.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="quiz" id="quiz">
+      <h2 class="section-title">Проверь свои знания!</h2>
+      <p class="section-subtitle">Небольшая викторина о кошках</p>
+      <div class="quiz-box">
+        <h3>Для чего кошке нужны усы?</h3>
+        <p style="margin: 15px 0 20px; color: #705e56;">Выбери правильный ответ:</p>
+        <button class="button" onclick="checkAnswer(false)">Только для красоты</button>
+        <button class="button" style="margin: 8px" onclick="checkAnswer(true)">Чтобы ощущать пространство</button>
+        <button class="button" onclick="checkAnswer(false)">Чтобы слышать звуки</button>
+        <div id="answer"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>🐾 «Мир кошек» · Учебный сайт · 2026</footer>
+
+  <script>
+    function checkAnswer(correct) {
+      const answer = document.getElementById("answer");
+      if (correct) {
+        answer.textContent = "Правильно! Усы помогают кошке чувствовать препятствия и ориентироваться.";
+      } else {
+        answer.textContent = "Попробуй ещё раз! Подумай, как кошка ориентируется в темноте.";
+      }
+    }
+  </script>
+</body>
+</html>
